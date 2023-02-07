@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+
+    <div class="toolbar no-select" [routerLink]="['']">
+      <mat-icon>home</mat-icon>
+      <span>Mac Shop</span>
+    </div>
+
+    <span class="example-spacer"></span>
+
+    <div class="toolbar no-select">
+
+      <button mat-flat-button color="accent" [routerLink]="['']">
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <button mat-flat-button color="accent" [routerLink]="['products']">
+        <mat-icon>apps</mat-icon>
+      </button>
+
+      <button mat-flat-button color="accent" [routerLink]="['basket']">
+        <mat-icon>shopping_basket</mat-icon>
+      </button>
+
+    </div>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>

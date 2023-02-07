@@ -1,0 +1,25 @@
+<div class="container" *ngIf="basket;else empty">
+  <mat-card class="example-card" *ngFor="let product of basket">
+
+    <mat-card-title>{{product.title}}</mat-card-title>
+
+    <img class="img" mat-card-image src="{{product.image}}">
+
+    <mat-card-content>
+      <p>Price: {{product.price}}</p>
+      <p>Year: {{product.year}}</p>
+      <p>Chip: {{product.configure.chip}}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-flat-button color="primary" (click)="removeBasket(product.id)">Delete</button>
+    </mat-card-actions>
+
+
+  </mat-card>
+
+</div>
+
+<ng-template #empty>
+  Empty...
+</ng-template>

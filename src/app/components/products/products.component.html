@@ -1,0 +1,40 @@
+<div class="container">
+
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="example-spacer">
+        <button mat-flat-button color="accent" (click)="openDialog()">Create</button>
+      </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <mat-card class="example-card" *ngFor="let product of products">
+
+    <mat-card-title>{{product.title}}</mat-card-title>
+
+    <img class="img" mat-card-image src="{{product.image}}">
+
+    <mat-card-content>
+      <p>Price: {{product.price}}</p>
+      <p>Year: {{product.year}}</p>
+      <p>Chip: {{product.configure.chip}}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-flat-button color="primary" (click)="addToBasket(product)">To basket</button>
+      <button mat-flat-button color="primary" [routerLink]="['/product',product.id]">Info</button>
+
+      <button mat-button color="primary" [matMenuTriggerFor]="menu">Actions</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item color="primary" (click)="openDialog(product)">Edit</button>
+        <button mat-menu-item color=" primary " (click)="deleteProduct(product.id)">Delete</button>
+
+      </mat-menu>
+
+    </mat-card-actions>
+
+
+  </mat-card>
+
+</div>
